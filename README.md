@@ -62,3 +62,16 @@ Finally add your main scss file to the Django settings file:
 ```
 ARISTOTLE_THEMES_SCSS = 'scss/myproject.scss'
 ```
+
+## Extending
+
+You might need to run collect statics when you add new files:
+
+```
+./manage.py collectstatic --noinput
+```
+
+## Next steps:
+
+ * Ability to import custom bootstrap themes
+ * Builtin bootstrap themes selectable using the settings file
