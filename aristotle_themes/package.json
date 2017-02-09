@@ -1,0 +1,29 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "aristotle-themes",
+        "scope": null,
+        "escapedName": "aristotle-themes",
+        "name": "aristotle-themes",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      ""
+    ]
+  ],
+  "author": {
+    "name": "Rafael Capdevielle"
+  },
+  "bugs": {
+    "url": "https://github.com/LogicalOutcomes/aristotle-themes/issues"
+  },
+  "dependencies": {
+    "bootstrap-material-design": ">=0.5",
+    "bootstrap": ">=3.0",
+    "jquery": ">=1.9.1"
+  },
+  "description": "Aristotle themes for Bootstrap 3",
+  "version": "1.0.0"
+}

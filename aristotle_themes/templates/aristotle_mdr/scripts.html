@@ -10,6 +10,11 @@
 {# load custom scss files instead of bootstrap css #}
 {% get_main_scss_file as main_scss %}
 <link rel="stylesheet" href="{% static main_scss|compile %}" />
+{% get_themes_css_files as css_files %}
+{% for css_file in css_files %}
+<link rel="stylesheet" href="{% static css_file %}" />
+{% endfor %}
+
 
 <link rel="stylesheet" href="{{ STATIC_URL }}{% compile 'aristotle_mdr/aristotle.less' %}" />
 {% bootstrap_javascript %}

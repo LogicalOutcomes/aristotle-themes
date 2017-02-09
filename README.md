@@ -10,6 +10,7 @@ Install aristotle themes with pip, or add it to your requirements.txt
 ```
 -e git+git://github.com/LogicalOutcomes/aristotle-themes@master#egg=aristotle-themes
 libsass
+django-npm
 ```
 
 Extend your `settings.py` file to include SASS support to django static precompiler:
@@ -23,6 +24,17 @@ STATIC_PRECOMPILER_COMPILERS = (
     })
 )
 ```
+
+Include `aristotle_themes.finders.NpmFinder` to `STATICFILES_FINDERS` in your setting file. Example:
+
+```
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'aristotle_themes.finders.NpmFinder',
+]
+```
+
 
 Add Aristotle Themes to your `INSTALLED_APPS`:
 
@@ -65,10 +77,23 @@ ARISTOTLE_THEMES_SCSS = 'scss/myproject.scss'
 
 ## Extending
 
-You might need to run collect statics when you add new files:
+You might need to run collect statics when you add/modify files:
 
 ```
 ./manage.py collectstatic --noinput
+```
+
+## Builtin Themes:
+
+### Themes
+
+ * bootstrap-material-design (default)
+ * more themes are coming...
+
+To select a custom theme from our list you need to set the varialbe `ARISTOTLE_THEMES_NAME` on your settings file. For example:
+
+```
+ARISTOTLE_THEMES_NAME = 'bootstrap-material-design'
 ```
 
 ## Next steps:
