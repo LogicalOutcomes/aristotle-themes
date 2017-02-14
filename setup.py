@@ -30,7 +30,6 @@ setup(
     ],
     install_requires=[
         'libsass',
-        'django-npm',
         'aristotle-metadata-registry',
     ]
 )
