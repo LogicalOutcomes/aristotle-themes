@@ -10,8 +10,8 @@
 {# load custom scss files instead of bootstrap css #}
 {% get_main_scss_file as main_scss %}
 <link rel="stylesheet" href="{% static main_scss|compile %}" />
-{% get_themes_css_files as css_files %}
-{% for css_file in css_files %}
+{% get_theme as theme %}
+{% for css_file in theme.css_files %}
 <link rel="stylesheet" href="{% static css_file %}" />
 {% endfor %}
 
@@ -28,6 +28,10 @@
   <script src="{% static 'notifications/notify.js' %}" type="text/javascript"></script>
   {% register_notify_callbacks callbacks='fill_aristotle_notification_menu,fill_notification_badge' %}
 {% endif %}
+
+{% for js_file in theme.js_files %}
+<script src="{% static js_file %}" type="text/javascript"></script>
+{% endfor %}
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
