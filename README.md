@@ -71,7 +71,10 @@ And `myproject.scss` should looks like this:
 Finally add your main scss file to the Django settings file:
 
 ```
-ARISTOTLE_THEMES_SCSS = 'scss/myproject.scss'
+ARISTOTLE_SETTINGS.update({
+    ...
+    'THEMES_MAIN_SCSS': 'scss/myproject.scss',
+    ...
 ```
 
 ## Extending
@@ -89,11 +92,22 @@ You might need to run collect statics when you add/modify files:
  * bootstrap-material-design (default)
  * more themes are coming...
 
-To select a custom theme from our list you need to set the varialbe `ARISTOTLE_THEMES_NAME` on your settings file. For example:
+To select a custom theme from our list you need to set the varialbe `THEMES_NAME` on your settings file under ARISTOTLE_SETTINGS. For example:
 
 ```
-ARISTOTLE_THEMES_NAME = 'bootstrap-material-design'
+ARISTOTLE_SETTINGS.update({
+    ...
+    'SITE_FAVICON': 'http://www.example.com/favicon.ico',
+    'THEMES_MAIN_SCSS': 'scss/aristotle_theme.scss',
+    'THEMES_NAME': 'bootstrap-material-design',
+    'THEMES_LIST': '[]',
+    ...
 ```
+
+you can also optionally include your theme list by setting variabe `THEMES_LIST` in your settings.py
+
+The favicon can be set from Aristotle `SITE_FAVICON`
+
 
 ## Next steps:
 
