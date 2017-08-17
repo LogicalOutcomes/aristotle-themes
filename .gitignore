@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 
 aristotle_themes/static/node_modules/
+.DS_Store
